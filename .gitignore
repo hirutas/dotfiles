@@ -1,0 +1,6 @@
+# global
+.DS_Store
+
+# vim
+.vim/bundle/
+.vim/.netrwhist
