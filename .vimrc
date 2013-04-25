@@ -119,7 +119,7 @@ syntax on
 set list
 
 " Highlight invisible characters
-set listchars=tab:»-,trail:-,nbsp:%
+set listchars=tab:»\ ,trail:-,nbsp:%
 
 " Search
 set incsearch
@@ -164,6 +164,13 @@ nmap <NL> <ESC>
 
 " Don't move back to first position when yaning on visual mode
 vnoremap y y`>
+
+"----------------------------------------
+" FileType
+"----------------------------------------
+" Perl
+autocmd BufNewFile,BufRead *.pl setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+
 
 "----------------------------------------
 " Unite
