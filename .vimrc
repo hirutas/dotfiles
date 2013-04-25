@@ -170,6 +170,9 @@ vnoremap y y`>
 "----------------------------------------
 " Perl
 autocmd BufNewFile,BufRead *.pl setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.pm setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.cgi setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.fcgi setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 
 "----------------------------------------
