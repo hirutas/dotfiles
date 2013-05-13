@@ -24,6 +24,9 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'thinca/vim-quickrun'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -136,9 +139,9 @@ nmap <ESC><ESC><ESC> :nohlsearch<CR><ESC>
 set autoindent
 set smartindent
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set backspace=2
 set scrolljump=5
 set hidden
@@ -162,18 +165,51 @@ set clipboard+=unnamed
 imap <NL> <ESC>
 nmap <NL> <ESC>
 
+" Map $,@
+inoremap <C-d> $
+inoremap <C-a> @
+
 " Don't move back to first position when yaning on visual mode
 vnoremap y y`>
 
 "----------------------------------------
-" FileType
+" neocomplcache
 "----------------------------------------
-" Perl
-autocmd BufNewFile,BufRead *.pl setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.pm setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.cgi setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
-autocmd BufNewFile,BufRead *.fcgi setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
+" Select with <TAB>
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>""
+
+let g:neocomplcache_ctags_arguments_list = {
+  \ 'perl' : '-R -h ".pm"'
+  \ }
+
+let g:neocomplcache_snippets_dir = "~/.vim/snippets"
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default'    : '',
+    \ 'perl'       : $HOME . '/.vim/dict/perl.dict'
+    \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+  let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" for snippets
+imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : "\<C-n>"
+
+"----------------------------------------
+" neosnippet
+"----------------------------------------
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_start_unite_snippet_target)
 
 "----------------------------------------
 " Unite
@@ -187,14 +223,17 @@ nmap <Space> [unite]
 nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
 " List Buffer
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-" List Register
-nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+" List Recursive File
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=file_rec file_rec<CR>
 " Most Recently Used
 nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 " Bookmarks
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 " Add to Bookmark
 nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+
+" Sorter
+call unite#filters#sorter_default#use("sorter_rank")
 
 " Exit by ESC ESC
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
