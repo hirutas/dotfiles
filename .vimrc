@@ -16,8 +16,14 @@ endif
 
 " let NeoBundle manage NeoBundle
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-" after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc', {
+  \ 'build' : {
+  \   'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+  \   'cygwin' : 'make -f make_cygwin.mak',
+  \   'mac' : 'make -f make_mac.mak',
+  \   'unix' : 'make -f make_unix.mak',
+  \  },
+  \ }
 
 " github repos
 NeoBundle 'Shougo/vimshell'
@@ -27,6 +33,7 @@ NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'mileszs/ack.vim'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -133,7 +140,8 @@ set whichwrap=b,s,h,l,<,>,[,]
 hi Search ctermbg=darkred guibg=darkred
 hi IncSearch ctermbg=red guibg=red
 " Clear search highlight by ESC ESC ESC
-nmap <ESC><ESC><ESC> :nohlsearch<CR><ESC>
+nnoremap <ESC><ESC><ESC> :nohlsearch<CR><ESC>
+nnoremap <NL><NL><NL> :nohlsearch<CR><ESC>
 
 " Input
 set autoindent
