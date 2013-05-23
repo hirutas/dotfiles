@@ -45,6 +45,7 @@ filetype plugin indent on   " required!
 
 "----------------------------------------
 " Basic Settings
+" :h index.txt => default keybind
 "----------------------------------------
 " To modify cursol key bug
 if !has('gui_running')
@@ -134,6 +135,7 @@ set listchars=tab:»\ ,trail:-,nbsp:%
 " Search
 set incsearch
 set ignorecase
+set smartcase
 set hlsearch
 set nowrapscan
 set whichwrap=b,s,h,l,<,>,[,]
@@ -170,8 +172,10 @@ set clipboard+=unnamed
 
 " Keymap
 " Change ESC to C-j
+map <NL> <ESC>
 imap <NL> <ESC>
-nmap <NL> <ESC>
+" TODO: enable at command mode
+" nmap <NL> <ESC>
 
 " Map $,@
 inoremap <C-d> $
@@ -238,7 +242,7 @@ nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 " Bookmarks
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 " Add to Bookmark
-nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+nnoremap <silent> [unite]d :<C-u>UniteBookmarkAdd<CR>
 
 " Sorter
 call unite#filters#sorter_default#use("sorter_rank")
@@ -260,6 +264,14 @@ endfunction
 
 " File window cursor line
 let g:unite_cursor_line_highlight = 'CursorLine'
+
+"----------------------------------------
+" Ack
+"----------------------------------------
+nmap <Space>a :let a=expand("<cword>")<CR>:Ack <C-R>=expand(a)<CR>
+nmap <Space>A :Ack
+nnoremap <Space>n :cnext<CR>
+nnoremap <Space>p :cprevious<CR>
 
 "----------------------------------------
 " Vim-LaTeX
