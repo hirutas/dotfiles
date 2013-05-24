@@ -129,6 +129,10 @@ set laststatus=2
 syntax on
 set list
 
+" Modeline
+set modeline
+set modelines=3
+
 " Highlight invisible characters
 set listchars=tab:»\ ,trail:-,nbsp:%
 
