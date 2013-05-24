@@ -185,6 +185,14 @@ inoremap <C-a> @
 vnoremap y y`>
 
 "----------------------------------------
+" filetype
+"----------------------------------------
+" Xslate
+autocmd BufNewFile,BufRead *.tt set filetype=html
+" Perl
+autocmd BufNewFile,BufRead *.t,*.psgi set filetype=perl
+
+"----------------------------------------
 " neocomplcache
 "----------------------------------------
 let g:acp_enableAtStartup = 0
