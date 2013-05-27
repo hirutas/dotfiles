@@ -237,6 +237,12 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_start_unite_snippet_target)
 
 "----------------------------------------
+" ref
+"----------------------------------------
+" Search builtin function
+nmap <C-k> :call ref#open("perldoc", '-f ' . expand('<cword>'))<CR>
+
+"----------------------------------------
 " Unite
 "----------------------------------------
 " Start on insert mode
