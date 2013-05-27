@@ -34,6 +34,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'thinca/vim-ref'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -255,6 +256,8 @@ nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
 " Add to Bookmark
 nnoremap <silent> [unite]d :<C-u>UniteBookmarkAdd<CR>
+" Search perldoc
+nnoremap <silent> [unite]k :<C-u>Unite ref/perldoc<CR>
 
 " Sorter
 call unite#filters#sorter_default#use("sorter_rank")
