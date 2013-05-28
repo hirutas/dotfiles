@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create symbolic links
-FILES=(.vim .vimrc .gvimrc .screenrc)
+FILES=(.vim .vimrc .gvimrc .screenrc .tmux.conf)
 
 for file in ${FILES[@]}
 do
