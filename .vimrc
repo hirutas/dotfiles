@@ -35,6 +35,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'tomtom/tcomment_vim'
 
 " vim-scripts repos
 " http://vim-scripts.org/
