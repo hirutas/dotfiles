@@ -154,7 +154,8 @@ nnoremap <NL><NL><NL> :nohlsearch<CR><ESC>
 " Input
 set autoindent
 set smartindent
-set expandtab
+set noexpandtab
+" set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
