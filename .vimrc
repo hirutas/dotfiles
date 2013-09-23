@@ -28,14 +28,14 @@ NeoBundle 'Shougo/vimproc', {
 " github repos
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'mileszs/ack.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tomtom/tcomment_vim'
+" NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -291,43 +291,23 @@ let g:unite_cursor_line_highlight = 'CursorLine'
 "----------------------------------------
 " Ack
 "----------------------------------------
-nmap <Space>a :let a=expand("<cword>")<CR>:Ack <C-R>=expand(a)<CR>
-nmap <Space>A :Ack
+" nmap <Space>a :let a=expand("<cword>")<CR>:Ack <C-R>=expand(a)<CR>
+" nmap <Space>A :Ack
+" nnoremap <Space>n :cnext<CR>
+" nnoremap <Space>p :cprevious<CR>
+
+"----------------------------------------
+" ag
+"----------------------------------------
+nmap <Space>a :let a=expand("<cword>")<CR>:Ag <C-R>=expand(a)<CR>
+nmap <Space>A :Ag
 nnoremap <Space>n :cnext<CR>
 nnoremap <Space>p :cprevious<CR>
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_grep_max_candidates = 200
 
-"----------------------------------------
-" Vim-LaTeX
-"----------------------------------------
-" Configuration from TeXWiki (MacTeX & TeXLive)
-" http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?Vim-LaTeX#aecb2dfb
-set shellslash
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-
-let g:Imap_UsePlaceHolders = 1
-let g:Imap_DeleteEmptyPlaceHolders = 1
-let g:Imap_StickyPlaceHolders = 0
-
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_FormatDependency_ps = 'dvi,ps'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
-
-let g:Tex_CompileRule_dvi = '/usr/texbin/platex -synctex=1 -interaction=nonstopmode $*'
-let g:Tex_CompileRule_ps = '/usr/texbin/dvips -Ppdf -o $*.ps $*.dvi'
-let g:Tex_CompileRule_pdf = '/usr/texbin/dvipdfmx $*.dvi'
-
-let g:Tex_BibtexFlavor = '/usr/texbin/pbibtex'
-let g:Tex_MakeIndexFlavor = '/usr/texbin/mendex $*.idx'
-
-" Disable foldings
-let Tex_FoldedSections=""
-let Tex_FoldedEnvironments=""
-let Tex_FoldedMisc=""
-
-" Disable Vim-Latex keybind
-imap <C-f> <Plug>IMAP_JumpForward
-nmap <C-f> <Plug>IMAP_JumpForward
 
 "----------------------------------------
 " Zencoding
@@ -337,9 +317,10 @@ imap <C-e> <C-y>
 vmap <C-e> <C-y>
 nmap <C-e> <C-y>
 
+
 "----------------------------------------
 " php-doc
 "----------------------------------------
-inoremap <C-0> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-0> :call PhpDocSingle()<CR>
-vnoremap <C-0> :call PhpDocRange()<CR>
+" inoremap <C-0> <ESC>:call PhpDocSingle()<CR>i
+" nnoremap <C-0> :call PhpDocSingle()<CR>
+" vnoremap <C-0> :call PhpDocRange()<CR>
