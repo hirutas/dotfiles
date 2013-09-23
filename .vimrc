@@ -36,6 +36,8 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'tomtom/tcomment_vim'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'scrooloose/nerdtree'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -323,4 +325,11 @@ nmap <C-e> <C-y>
 "----------------------------------------
 " inoremap <C-0> <ESC>:call PhpDocSingle()<CR>i
 " nnoremap <C-0> :call PhpDocSingle()<CR>
-" vnoremap <C-0> :call PhpDocRange()<CR>
+
+
+"----------------------------------------
+" nerdtree
+"----------------------------------------
+" Open a NERDTree automatically when vim starts up if no files were specified
+autocmd vimenter * if !argc() | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>

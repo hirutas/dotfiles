@@ -49,4 +49,5 @@ if [ ! -d ~/.vim/bundle ]; then
   git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 # Force update neobundle modules
+vim -c 'NeoBundleClean' -c quit
 vim -c 'NeoBundleInstall!' -c quit
