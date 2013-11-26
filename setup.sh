@@ -46,7 +46,7 @@ esac
 # Install neobundle.vim
 if [ ! -d ~/.vim/bundle ]; then
   mkdir -p ~/.vim/bundle
-  git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+  git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 fi
 # Force update neobundle modules
 vim -c 'NeoBundleClean' -c quit
