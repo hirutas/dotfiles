@@ -197,7 +197,7 @@ vnoremap y y`>
 " filetype
 "----------------------------------------
 " Xslate
-autocmd BufNewFile,BufRead *.tt set filetype=html
+autocmd BufNewFile,BufRead *.tt,*.tx set filetype=html
 " Perl
 autocmd BufNewFile,BufRead *.t,*.psgi set filetype=perl
 
