@@ -331,5 +331,5 @@ nmap <C-e> <C-y>
 " nerdtree
 "----------------------------------------
 " Open a NERDTree automatically when vim starts up if no files were specified
-autocmd vimenter * if !argc() | NERDTree | endif
+" autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
