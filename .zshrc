@@ -2,7 +2,6 @@
 # General settings
 # --------------------------------------
 setopt auto_pushd
-setopt correct
 setopt pushd_ignore_dups
 setopt no_beep
 setopt prompt_subst
