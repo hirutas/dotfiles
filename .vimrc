@@ -28,12 +28,13 @@ NeoBundle 'Shougo/vimproc', {
 " github repos
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'mattn/emmet-vim'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
@@ -309,15 +310,6 @@ let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_recursive_opt = ''
 let g:unite_source_grep_max_candidates = 200
-
-
-"----------------------------------------
-" Zencoding
-"----------------------------------------
-" Swap C-y and C-e
-imap <C-e> <C-y>
-vmap <C-e> <C-y>
-nmap <C-e> <C-y>
 
 
 "----------------------------------------
