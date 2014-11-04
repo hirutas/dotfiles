@@ -40,7 +40,6 @@ NeoBundle 'mattn/emmet-vim'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 
 " vim-scripts repos
@@ -321,13 +320,6 @@ let g:unite_source_grep_max_candidates = 200
 " inoremap <C-0> <ESC>:call PhpDocSingle()<CR>i
 " nnoremap <C-0> :call PhpDocSingle()<CR>
 
-
-"----------------------------------------
-" nerdtree
-"----------------------------------------
-" Open a NERDTree automatically when vim starts up if no files were specified
-" autocmd vimenter * if !argc() | NERDTree | endif
-" map <C-n> :NERDTreeToggle<CR>
 
 "----------------------------------------
 " syntastic
