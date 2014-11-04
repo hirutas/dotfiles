@@ -41,6 +41,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -326,4 +327,16 @@ let g:unite_source_grep_max_candidates = 200
 "----------------------------------------
 " Open a NERDTree automatically when vim starts up if no files were specified
 " autocmd vimenter * if !argc() | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
+
+"----------------------------------------
+" syntastic
+"----------------------------------------
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_perl_checkers = ['perl', 'podchecker']
+let g:syntastic_enable_perl_checker = 1
+
+" for location list
+nnoremap <C-n> :lnext<CR>
+nnoremap <C-p> :lprevious<CR>
