@@ -40,6 +40,10 @@ NeoBundle 'mattn/emmet-vim'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
+NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle 'osyo-manga/vim-watchdogs'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'dannyob/quickfixstatus'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -305,8 +309,6 @@ let g:unite_cursor_line_highlight = 'CursorLine'
 "----------------------------------------
 nmap <Space>a :let a=expand("<cword>")<CR>:Ag <C-R>=expand(a)<CR>
 nmap <Space>A :Ag
-nnoremap <Space>n :cnext<CR>
-nnoremap <Space>p :cprevious<CR>
 let g:unite_source_grep_command = 'ag'
 let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_recursive_opt = ''
@@ -319,3 +321,12 @@ let g:unite_source_grep_max_candidates = 200
 " inoremap <C-0> <ESC>:call PhpDocSingle()<CR>i
 " nnoremap <C-0> :call PhpDocSingle()<CR>
 
+
+"----------------------------------------
+" watchdogs
+"----------------------------------------
+let g:watchdogs_check_BufWritePost_enable = 1
+let g:watchdogs_check_CursorHold_enable = 1
+nnoremap <Space>s :WatchdogsRun<CR>
+nnoremap <C-n> :cnext<CR>
+nnoremap <C-p> :cprevious<CR>
