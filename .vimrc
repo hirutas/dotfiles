@@ -40,7 +40,6 @@ NeoBundle 'mattn/emmet-vim'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'scrooloose/syntastic'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -320,15 +319,3 @@ let g:unite_source_grep_max_candidates = 200
 " inoremap <C-0> <ESC>:call PhpDocSingle()<CR>i
 " nnoremap <C-0> :call PhpDocSingle()<CR>
 
-
-"----------------------------------------
-" syntastic
-"----------------------------------------
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_perl_checkers = ['perl', 'podchecker']
-let g:syntastic_enable_perl_checker = 1
-
-" for location list
-nnoremap <C-n> :lnext<CR>
-nnoremap <C-p> :lprevious<CR>
