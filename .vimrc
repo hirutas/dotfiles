@@ -155,9 +155,9 @@ set nowrapscan
 set whichwrap=b,s,h,l,<,>,[,]
 hi Search ctermbg=darkred guibg=darkred
 hi IncSearch ctermbg=red guibg=red
-" Clear search highlight by ESC ESC ESC
-nnoremap <ESC><ESC><ESC> :nohlsearch<CR><ESC>
-nnoremap <NL><NL><NL> :nohlsearch<CR><ESC>
+" Clear search highlight by ESC
+nnoremap <ESC> :nohlsearch<CR><ESC>
+nnoremap <NL> :nohlsearch<CR><ESC>
 
 " Input
 set autoindent
