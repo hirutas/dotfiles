@@ -98,6 +98,8 @@ alias gst="git status"
 alias gad="git add"
 alias gcm="git commit"
 alias gdf="git diff"
+alias gdfc="git diff --cached"
+alias glg="git log"
 alias gco="git checkout"
 
 # global alias
