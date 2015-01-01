@@ -43,6 +43,7 @@ NeoBundle 'osyo-manga/shabadou.vim'
 NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
+NeoBundle 'kannokanno/previm'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -322,3 +323,15 @@ let g:watchdogs_check_CursorHold_enable = 1
 nnoremap <Space>s :WatchdogsRun<CR>
 nnoremap <C-n> :cnext<CR>
 nnoremap <C-p> :cprevious<CR>
+
+
+"----------------------------------------
+" previm
+"----------------------------------------
+let g:previm_open_cmd = 'open -a "Google Chrome"'
+let g:previm_enable_realtime = 1
+augroup PrevimSettings
+	autocmd!
+	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
