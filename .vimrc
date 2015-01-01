@@ -37,7 +37,6 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'mattn/emmet-vim'
-" NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'osyo-manga/shabadou.vim'
@@ -296,13 +295,6 @@ endfunction
 " File window cursor line
 let g:unite_cursor_line_highlight = 'CursorLine'
 
-"----------------------------------------
-" Ack
-"----------------------------------------
-" nmap <Space>a :let a=expand("<cword>")<CR>:Ack <C-R>=expand(a)<CR>
-" nmap <Space>A :Ack
-" nnoremap <Space>n :cnext<CR>
-" nnoremap <Space>p :cprevious<CR>
 
 "----------------------------------------
 " ag
