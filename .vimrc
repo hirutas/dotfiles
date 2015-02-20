@@ -44,6 +44,7 @@ NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -334,4 +335,11 @@ augroup PrevimSettings
 	autocmd!
 	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
+
+
+"----------------------------------------
+" coffeescript
+"----------------------------------------
+autocmd BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 
