@@ -45,6 +45,7 @@ NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -156,9 +157,9 @@ set nowrapscan
 set whichwrap=b,s,h,l,<,>,[,]
 hi Search ctermbg=darkred guibg=darkred
 hi IncSearch ctermbg=red guibg=red
-" Clear search highlight by ESC
-nnoremap <ESC> :nohlsearch<CR><ESC>
-nnoremap <NL> :nohlsearch<CR><ESC>
+" Clear search highlight by ESC ESC
+nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
+nnoremap <NL><NL> :nohlsearch<CR><ESC>
 
 " Input
 set autoindent
@@ -343,3 +344,17 @@ augroup END
 autocmd BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 
+
+"----------------------------------------
+" emmet
+"----------------------------------------
+" let g:user_emmet_leader_key = '<c-e>'
+autocmd FileType css,scss,html,coffee imap <c-e> <plug>(emmet-expand-abbr)
+let g:user_emmet_settings = {
+\    'indentation' : '  '
+\}
+
+"----------------------------------------
+" matchit
+"----------------------------------------
+source $VIMRUNTIME/macros/matchit.vim
