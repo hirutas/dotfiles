@@ -227,7 +227,6 @@ let g:neocomplcache_ctags_arguments_list = {
   \ 'perl' : '-R -h ".pm"'
   \ }
 
-let g:neocomplcache_snippets_dir = "~/.vim/snippets"
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default'    : '',
     \ 'perl'       : $HOME . '/.vim/dict/perl.dict'
@@ -248,6 +247,7 @@ imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_start_unite_snippet_target)
+let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 "----------------------------------------
 " ref
