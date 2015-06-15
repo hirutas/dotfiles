@@ -246,7 +246,7 @@ imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>
 "----------------------------------------
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_start_unite_snippet_target)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 "----------------------------------------

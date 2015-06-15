@@ -1,26 +1,26 @@
 # vim: set noexpandtab:
 
-snippet u
-	#!/usr/bin/perl
-	use strict;
-	use warnings;
-
 snippet d
 	use Data::Dumper;
-	local $Data::Dumper::Indent = 1;
-	local $Data::Dumper::Terse	= 1;
-	warn Dumper
+	print Dumper(${1})
 
 snippet t
-	#!/usr/bin/perl
 	use strict;
 	use warnings
 	use Test::More;
+	use Test::Exception;
 
 	subtest => sub {
+		${1}
 	};
 
 	done_testing;
 
 snippet m
 	my $${1} = ${2};
+
+snippet hr
+	+{ ${1} => ${2} }
+
+snippet ar
+	+[ ${1} ]
