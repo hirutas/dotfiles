@@ -11,13 +11,12 @@ filetype plugin indent off  " required!
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
 endif
 
+call neobundle#begin(expand('~/.vim/bundle/'))
 " let NeoBundle manage NeoBundle
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 NeoBundle 'Shougo/vimproc', {
   \ 'build' : {
   \   'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -51,6 +50,8 @@ NeoBundle 'editorconfig/editorconfig-vim'
 " http://vim-scripts.org/
 NeoBundle 'AutoClose'
 NeoBundle 'PDV--phpDocumentor-for-Vim'
+
+call neobundle#end()
 
 " NeoBundle Settings End
 filetype plugin indent on   " required!
