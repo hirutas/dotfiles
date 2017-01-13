@@ -280,7 +280,7 @@ nnoremap <silent> [unite]d :<C-u>UniteBookmarkAdd<CR>
 nnoremap <silent> [unite]k :<C-u>Unite ref/perldoc<CR>
 
 " Sorter
-call unite#filters#sorter_default#use("sorter_rank")
+call unite#filters#sorter_default#use("sorter_selecta")
 
 " Exit by ESC ESC
 autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
