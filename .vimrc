@@ -45,6 +45,7 @@ NeoBundle 'dannyob/quickfixstatus'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'junegunn/vim-easy-align'
 
 " vim-scripts repos
 " http://vim-scripts.org/
@@ -359,3 +360,9 @@ let g:user_emmet_settings = {
 " matchit
 "----------------------------------------
 source $VIMRUNTIME/macros/matchit.vim
+
+"----------------------------------------
+" vim-easy-align
+"----------------------------------------
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
