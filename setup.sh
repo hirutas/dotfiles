@@ -3,7 +3,7 @@
 # Symbolic links
 # --------------------------------------
 # Target lists
-FILES=(.vim .vimrc .gvimrc .screenrc .tmux.conf .zsh .zprofile .zshenv .zshrc .git-completion.bash .git-prompt.sh)
+FILES=(.vim .vimrc .screenrc .tmux.conf .git-completion.bash .git-prompt.sh)
 
 # Create symbolic links
 for file in ${FILES[@]}
