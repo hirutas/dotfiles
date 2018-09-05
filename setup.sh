@@ -21,25 +21,6 @@ do
   ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
-
-# --------------------------------------
-# OS specific
-# --------------------------------------
-case ${OSTYPE} in
-    # for BSD (mac)
-    darwin*)
-        # To fix miss configuration of Mac OS X 10.7
-        if [ -f /etc/zshenv ]; then
-            echo "Fix miss configuration"
-            sudo mv -iv /etc/zshenv /etc/zprofile
-        fi
-        ;;
-    # for linux
-    linux*)
-        ;;
-esac
-
-
 # --------------------------------------
 # vim
 # --------------------------------------
